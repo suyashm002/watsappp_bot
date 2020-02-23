@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ReadNotification</string>
+    <string name="enter_the_expected_message">Enter the expected message from your friend</string>
+    <string name="your_expected_message_from_friends">Your expected message from friends</string>
+    <string name="your_reply_message">Your reply to message</string>
 </resources>

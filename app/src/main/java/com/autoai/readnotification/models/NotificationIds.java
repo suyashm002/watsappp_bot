@@ -17,7 +17,7 @@ import com.autoai.readnotification.R;
 
 
 /**
- * Created by JJ on 22/05/15.
+ * Created by Suyash
  */
 public class NotificationIds {
 

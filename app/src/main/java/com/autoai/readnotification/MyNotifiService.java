@@ -20,6 +20,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.autoai.readnotification.models.Action;
+import com.autoai.readnotification.models.SaveCustomeMessage;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -30,6 +31,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+
 @SuppressLint("OverrideAbstract")
 public class MyNotifiService extends NotificationListenerService {
     private BufferedWriter bw;
@@ -39,6 +43,9 @@ public class MyNotifiService extends NotificationListenerService {
     private MyHandler handler = new MyHandler();
     private String nMessage;
     private String data;
+    private Realm realm;
+
+    RealmResults<SaveCustomeMessage> list;
     Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -50,6 +57,7 @@ public class MyNotifiService extends NotificationListenerService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("Suyash", "Service is started" + "-----");
+        if (intent != null && intent.hasExtra("data"))
         data = intent.getStringExtra("data");
         return super.onStartCommand(intent, flags, startId);
     }
@@ -67,6 +75,7 @@ public class MyNotifiService extends NotificationListenerService {
     public void onNotificationPosted(StatusBarNotification sbn) {
         //        super.onNotificationPosted(sbn);
 
+        realm = Realm.getDefaultInstance();
 
         Log.i(TAG, "Here");
 
@@ -77,8 +86,18 @@ public class MyNotifiService extends NotificationListenerService {
         if (action != null) {
             Log.i(TAG, "success");
             try {
-                if( getPackageName().equalsIgnoreCase("com.watsapp")) {
-                    action.sendReply(getApplicationContext(), "This is bot of suyash . When suyash see this msg he'll reply to you. I am not trained well I am in training");
+
+                if (sbn.getPackageName().equalsIgnoreCase("com.whatsapp")) {
+                    String msg = sbn.getNotification().extras.getString("android.text");
+                   // list = realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll();
+
+                    if (msg != null && !msg.equalsIgnoreCase( "📷 Photo"))
+                    if (realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll().isValid())
+                        list = realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll();
+                    if (!list.isEmpty())
+                    action.sendReply(getApplicationContext(),list.get(0).getReplyMessage());
+
+                   // action.sendReply(getApplicationContext(), "This is bot of suyash . When suyash see this msg he'll reply to you. I am not trained well I am in training");
                 }
             } catch (PendingIntent.CanceledException e) {
                 Log.i(TAG, "CRAP " + e.toString());
@@ -128,6 +147,9 @@ public class MyNotifiService extends NotificationListenerService {
     }
 
     private void init() {
+       // realm = Realm.getDefaultInstance();
+      //  list = ArrayList(realm.where(SaveCustomeMessage::class.java));
+
         sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             FileOutputStream fos = new FileOutputStream(newFile(), true);

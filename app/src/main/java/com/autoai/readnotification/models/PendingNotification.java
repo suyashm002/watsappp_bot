@@ -10,7 +10,7 @@ import com.autoai.readnotification.VersionUtils;
 import java.util.concurrent.ScheduledFuture;
 
 /**
- * Created by JJ on 05/06/15.
+ * Created by Suyash.
  */
 public class PendingNotification {
 

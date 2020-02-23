@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import android.support.v4.app.RemoteInput;
 
 /**
- * Created by JJ on 05/08/15.
+ * Created by Suyash
  */
 public class RemoteInputParcel implements Parcelable {
 
