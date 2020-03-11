@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/cardLayoutBackground"
-         >
+          >
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/expected_mesg"
             android:layout_width="match_parent"
@@ -37,10 +36,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/submit_button"
             android:layout_marginEnd="@dimen/padding_sixteen"
+            android:text="@string/add"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="@dimen/margin_eight"
             android:layout_gravity="end"/>
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorAccent"/>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
