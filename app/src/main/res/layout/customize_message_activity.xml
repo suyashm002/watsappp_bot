@@ -11,6 +11,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
           >
+        <LinearLayout
+            android:id="@+id/notification_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="@dimen/margin_eight"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/enable_notification"/>
+        </LinearLayout>
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/expected_mesg"
             android:layout_width="match_parent"

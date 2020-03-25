@@ -5,4 +5,5 @@
     <string name="your_reply_message">Your reply to message</string>
     <string name="add">ADD</string>
     <string name="delete_msg">Delete this message</string>
+    <string name="enable_notification">Turn on notification listening service</string>
 </resources>

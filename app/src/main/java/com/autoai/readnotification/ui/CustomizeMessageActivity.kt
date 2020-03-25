@@ -1,21 +1,16 @@
 package com.autoai.readnotification.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.widget.Toast
 import com.autoai.readnotification.R
-
+import com.autoai.readnotification.ReplyMessageAdapter
 import com.autoai.readnotification.models.SaveCustomeMessage
 import io.realm.Realm
 import kotlinx.android.synthetic.main.customize_message_activity.*
-
-import com.autoai.readnotification.ReplyMessageAdapter
-import java.util.*
-import kotlin.collections.ArrayList
-
-
 
 
 class CustomizeMessageActivity : AppCompatActivity() {
@@ -38,7 +33,11 @@ class CustomizeMessageActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         iniateAdapter()
-        submit_button.setOnClickListener { View -> initEditText() }
+        submit_button.setOnClickListener { initEditText() }
+        notification_layout.setOnClickListener {
+            //Open listener reference message // Notification access
+        val intent_s = Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+        startActivity(intent_s) }
     }
 
     fun iniateAdapter() {
@@ -48,6 +47,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
 
 
     }
+
     private fun initEditText() {
         realm.executeTransactionAsync({
             val message = it.createObject(SaveCustomeMessage::class.java)
@@ -77,7 +77,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
 
     }
 
-    fun doClick(item :SaveCustomeMessage) {
+    fun doClick(item: SaveCustomeMessage) {
         val msgs = realm
                 .where(SaveCustomeMessage::class.java)
                 .findAll()
@@ -85,7 +85,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
         val userdatabase = msgs
                 .where()
                 .equalTo("expectedMessage", item.expectedMessage)
-                .equalTo("replyMessage",item.replyMessage)
+                .equalTo("replyMessage", item.replyMessage)
                 .findFirst()
 
         if (userdatabase != null) {
@@ -99,10 +99,18 @@ class CustomizeMessageActivity : AppCompatActivity() {
             realm.commitTransaction()
         }
         iniateAdapter()
-     }
+    }
+
     override fun onBackPressed() {
-        super.onBackPressed()
         finish()
+        super.onBackPressed()
+    }
+
+    private fun isNotificationServiceRunning(): Boolean {
+        val contentResolver = contentResolver
+        val enabledNotificationListeners = Settings.Secure.getString(contentResolver, "enabled_notification_listeners")
+        val packageName = packageName
+        return enabledNotificationListeners != null && enabledNotificationListeners.contains(packageName)
     }
 
 }

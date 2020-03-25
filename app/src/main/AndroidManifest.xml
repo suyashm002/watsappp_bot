@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.CustomizeMessageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,7 @@
         </activity>
 
 
-        <activity android:name=".ui.CustomizeMessageActivity"/>
+        <activity android:name=".ui.MainActivity"/>
         <service
             android:name=".MyNotifiService"
             android:priority="1000"
