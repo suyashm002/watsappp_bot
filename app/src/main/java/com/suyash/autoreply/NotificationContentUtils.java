@@ -1,4 +1,4 @@
-package com.autoai.readnotification;
+package com.suyash.autoreply;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
-import com.autoai.readnotification.models.NotificationIds;
+import com.suyash.autoreply.models.NotificationIds;
 
 public class NotificationContentUtils {
 

@@ -1,26 +1,20 @@
-package com.autoai.readnotification;
+package com.suyash.autoreply;
 
 import android.annotation.SuppressLint;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.sip.SipSession;
-import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
-import android.support.v4.app.RemoteInput;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.autoai.readnotification.models.Action;
-import com.autoai.readnotification.models.SaveCustomeMessage;
+import com.suyash.autoreply.models.Action;
+import com.suyash.autoreply.models.SaveCustomeMessage;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -28,7 +22,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 import io.realm.Realm;

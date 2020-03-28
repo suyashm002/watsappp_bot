@@ -1,4 +1,4 @@
-package com.autoai.readnotification.ui
+package com.suyash.autoreply.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import com.autoai.readnotification.R
-import com.autoai.readnotification.ReplyMessageAdapter
-import com.autoai.readnotification.models.SaveCustomeMessage
+import com.suyash.autoreply.R
+import com.suyash.autoreply.ReplyMessageAdapter
+import com.suyash.autoreply.models.SaveCustomeMessage
 import io.realm.Realm
 import kotlinx.android.synthetic.main.customize_message_activity.*
 

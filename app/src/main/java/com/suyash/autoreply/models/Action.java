@@ -1,4 +1,4 @@
-package com.autoai.readnotification.models;
+package com.suyash.autoreply.models;
 
 import android.app.PendingIntent;
 import android.content.Context;

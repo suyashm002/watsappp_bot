@@ -1,4 +1,4 @@
-package com.autoai.readnotification.services;
+package com.suyash.autoreply.services;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,12 +10,12 @@ import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.autoai.readnotification.BuildConfig;
-import com.autoai.readnotification.NotificationContentUtils;
-import com.autoai.readnotification.NotificationListenerUtils;
-import com.autoai.readnotification.NotificationUtils;
-import com.autoai.readnotification.VersionUtils;
-import com.autoai.readnotification.models.PendingNotification;
+import com.suyash.autoreply.BuildConfig;
+import com.suyash.autoreply.NotificationContentUtils;
+import com.suyash.autoreply.NotificationListenerUtils;
+import com.suyash.autoreply.NotificationUtils;
+import com.suyash.autoreply.VersionUtils;
+import com.suyash.autoreply.models.PendingNotification;
 
 import java.util.ArrayList;
 import java.util.HashMap;

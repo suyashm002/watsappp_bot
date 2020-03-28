@@ -1,4 +1,4 @@
-package com.autoai.readnotification;
+package com.suyash.autoreply;
 
 import android.app.Activity;
 import android.content.ComponentName;

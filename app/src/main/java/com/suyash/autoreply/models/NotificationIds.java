@@ -1,4 +1,4 @@
-package com.autoai.readnotification.models;
+package com.suyash.autoreply.models;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.autoai.readnotification.R;
+import com.suyash.autoreply.R;
 
 
 /**

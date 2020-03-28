@@ -1,4 +1,4 @@
-package com.autoai.readnotification;
+package com.suyash.autoreply;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

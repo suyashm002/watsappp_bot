@@ -1,11 +1,11 @@
-package com.autoai.readnotification.models;
+package com.suyash.autoreply.models;
 
 import android.annotation.SuppressLint;
 import android.service.notification.StatusBarNotification;
 import android.support.v4.app.NotificationCompat;
 
 
-import com.autoai.readnotification.VersionUtils;
+import com.suyash.autoreply.VersionUtils;
 
 import java.util.concurrent.ScheduledFuture;
 

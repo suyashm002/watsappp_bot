@@ -1,4 +1,4 @@
-package com.autoai.readnotification.ui;
+package com.suyash.autoreply.ui;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -9,14 +9,11 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-import com.autoai.readnotification.MyNotifiService;
-import com.autoai.readnotification.R;
+import com.suyash.autoreply.MyNotifiService;
+import com.suyash.autoreply.R;
 
 public class MainActivity extends AppCompatActivity {
 

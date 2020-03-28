@@ -1,6 +1,5 @@
-package com.autoai.readnotification.models
+package com.suyash.autoreply.models
 
- import android.support.annotation.IntegerRes
  import io.realm.RealmObject
 
 open class SaveCustomeMessage( var expectedMessage: String?= null,

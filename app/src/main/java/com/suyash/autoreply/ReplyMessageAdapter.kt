@@ -1,11 +1,11 @@
-package com.autoai.readnotification
+package com.suyash.autoreply
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.autoai.readnotification.models.SaveCustomeMessage
+import com.suyash.autoreply.models.SaveCustomeMessage
 import kotlinx.android.synthetic.main.item_message.view.*
 
 class ReplyMessageAdapter(private val items : ArrayList<SaveCustomeMessage>, val context : Context,val listner : (SaveCustomeMessage)-> Unit ) : RecyclerView.Adapter<ReplyMessageAdapter.ViewHolder>() {
