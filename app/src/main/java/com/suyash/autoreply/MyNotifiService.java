@@ -84,11 +84,12 @@ public class MyNotifiService extends NotificationListenerService {
                     String msg = sbn.getNotification().extras.getString("android.text");
                    // list = realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll();
 
-                    if (msg != null && !msg.equalsIgnoreCase( "📷 Photo"))
-                    if (realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll().isValid())
-                        list = realm.where(SaveCustomeMessage.class).equalTo("expectedMessage",msg).findAll();
-                    if (!list.isEmpty())
-                    action.sendReply(getApplicationContext(),list.get(0).getReplyMessage());
+                    if (msg != null && !msg.equalsIgnoreCase( "📷 Photo")) {
+                        if (realm.where(SaveCustomeMessage.class).equalTo("expectedMessage", msg).findAll().isValid())
+                            list = realm.where(SaveCustomeMessage.class).equalTo("expectedMessage", msg).findAll();
+                        if (!list.isEmpty())
+                            action.sendReply(getApplicationContext(), list.get(0).getReplyMessage());
+                    }
 
                    // action.sendReply(getApplicationContext(), "This is bot of suyash . When suyash see this msg he'll reply to you. I am not trained well I am in training");
                 }
