@@ -6,8 +6,9 @@ import android.app.Notification;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
-import android.support.v4.app.NotificationCompat;
-import android.util.Log;
+ import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 /**
  * Created by jj on 03/09/16.

@@ -3,7 +3,7 @@
     <item>
         <shape>
             <solid android:color="@color/fab_color"/>
-            <corners android:radius="10dp"/>
+            <corners android:radius="40dp"/>
 
         </shape>
     </item>

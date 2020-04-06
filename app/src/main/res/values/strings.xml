@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">ReadNotification</string>
     <string name="enter_the_expected_message">Enter the expected message from your friend</string>
-    <string name="your_expected_message_from_friends">Your expected message from friends</string>
-    <string name="your_reply_message">Your reply to message</string>
+    <string name="your_expected_message_from_friends">Message received</string>
+    <string name="your_reply_message">Reply</string>
     <string name="add">ADD</string>
     <string name="delete_msg">Delete this message</string>
     <string name="enable_notification">Turn on notification listening service</string>
+    <string name="auto_reply">Auto Reply</string>
+    <string name="create">create</string>
+    <string name="no_reply_available">No reply available</string>
+    <string name="done">Done</string>
 </resources>

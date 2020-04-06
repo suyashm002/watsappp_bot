@@ -1,72 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
+<com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    <LinearLayout
-         android:id="@+id/layout"
+
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-          >
-        <LinearLayout
-            android:id="@+id/notification_layout"
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/auto_reply"
+            android:textColor="@color/black"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:padding="@dimen/margin_eight"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
-                android:text="@string/enable_notification"/>
-        </LinearLayout>
-        <android.support.v7.widget.AppCompatEditText
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notification_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="18dp"
+
+            android:background="@drawable/notification_not_on" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/no_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/no_reply_available"
+            android:textColor="@color/header_color" />
+
+        <!--<android.support.v7.widget.AppCompatEditText
             android:id="@+id/expected_mesg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/enter_the_expected_message"
-           android:layout_marginTop="@dimen/margin_twenty_four"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_sixteen"
+            android:layout_marginTop="@dimen/margin_twenty_four"
             android:layout_marginEnd="@dimen/padding_sixteen"
+            android:hint="@string/enter_the_expected_message"
 
             />
+
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/reply_message"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/enter_the_expected_message"
-            android:layout_marginTop="@dimen/margin_sixteen"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_sixteen"
+            android:layout_marginTop="@dimen/margin_sixteen"
             android:layout_marginEnd="@dimen/padding_sixteen"
+            android:hint="@string/enter_the_expected_message"
 
-            />
-        <Button
+            />-->
+
+        <!-- <Button
+            android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/submit_button"
+            android:layout_gravity="end"
             android:layout_marginEnd="@dimen/padding_sixteen"
-            android:text="@string/add"
-            android:background="@drawable/button_background"
             android:layout_marginBottom="@dimen/margin_eight"
-            android:layout_gravity="end"/>
+            android:background="@drawable/button_background"
+            android:text="@string/add" />-->
 
-    </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorAccent"/>
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/notification_layout"
+            android:layout_marginTop="50dp" />
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/create_msg"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_sixteen"
-        android:id="@+id/recyclerview" />
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:baselineAlignBottom="true"
+        android:text="@string/create"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:backgroundTint="@color/fab_color"
+        app:icon="@drawable/ic_add_white"
+        app:iconTint="@color/white"
+        android:background="@drawable/button_background"/>
 
-</LinearLayout>
+</com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>

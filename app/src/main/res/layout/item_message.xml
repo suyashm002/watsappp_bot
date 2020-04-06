@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,10 +8,6 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="4dp"
     android:padding="4dp"
-    android:layout_marginStart="@dimen/margin_sixteen"
-    android:layout_marginEnd="@dimen/margin_sixteen"
-    android:layout_marginBottom="@dimen/margin_eight"
-    android:layout_marginTop="@dimen/margin_eight"
     android:background="@color/app_secondary_accent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -21,44 +17,44 @@
         android:orientation="vertical">
 
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/expected_msg_txt_header"
             android:text="@string/your_expected_message_from_friends"
-            android:textSize="16sp"
-            android:textColor="@color/app_secondary_text"
+            android:textSize="10sp"
+            android:textColor="@color/header_color"
             android:layout_marginTop="@dimen/margin_sixteen"
             android:layout_marginEnd="@dimen/margin_sixteen"
             android:layout_marginStart="@dimen/margin_sixteen"/>
-    <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/expected_msg_txt"
         android:text="@string/app_name"
         android:textSize="16sp"
-        android:textColor="@color/app_secondary_text"
-        android:layout_marginTop="@dimen/margin_eight"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="@dimen/margin_sixteen"
         android:layout_marginStart="@dimen/margin_sixteen"/>
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/reply_msg_txt_header"
             android:text="@string/your_reply_message"
-            android:textSize="16sp"
+            android:textSize="10sp"
             android:textColor="@color/app_secondary_text"
-            android:layout_marginTop="@dimen/margin_sixteen"
+            android:layout_marginTop="@dimen/margin_ten"
             android:layout_marginEnd="@dimen/margin_sixteen"
             android:layout_marginStart="@dimen/margin_sixteen"/>
-    <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/reply_msg_txt"
         android:text="@string/app_name"
-        android:textColor="@color/app_secondary_text"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_marginTop="@dimen/margin_eight"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="@dimen/margin_sixteen"
         android:layout_marginStart="@dimen/margin_sixteen"
         android:layout_marginBottom="@dimen/margin_sixteen"/>
@@ -66,7 +62,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="@color/colorAccent"/>
+            android:background="@color/divider_line"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,9 +73,10 @@
             android:text="@string/delete_msg"
             android:background="@drawable/button_background"
             android:layout_marginBottom="@dimen/margin_eight"
-            android:paddingStart="@dimen/margin_four"
-            android:paddingEnd="@dimen/margin_four"
-            android:layout_gravity="end"/>
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:layout_gravity="end"
+            android:visibility="gone"/>
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

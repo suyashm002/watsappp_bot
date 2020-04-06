@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
-import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+ import android.text.TextUtils;
 import android.util.Log;
 
 import com.suyash.autoreply.BuildConfig;
@@ -25,6 +24,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+
+import androidx.core.app.NotificationCompat;
 
 
 @SuppressLint("NewApi")

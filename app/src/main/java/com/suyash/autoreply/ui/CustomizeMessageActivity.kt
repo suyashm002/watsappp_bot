@@ -1,11 +1,13 @@
 package com.suyash.autoreply.ui
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
+ import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.suyash.autoreply.R
 import com.suyash.autoreply.ReplyMessageAdapter
 import com.suyash.autoreply.models.SaveCustomeMessage
@@ -33,22 +35,37 @@ class CustomizeMessageActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         iniateAdapter()
-        submit_button.setOnClickListener { initEditText() }
+       // submit_button.setOnClickListener { initEditText() }
         notification_layout.setOnClickListener {
             //Open listener reference message // Notification access
-        val intent_s = Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
-        startActivity(intent_s) }
+        val intent_s = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+        } else {
+            TODO("VERSION.SDK_INT < LOLLIPOP_MR1")
+        }
+            startActivity(intent_s) }
+
+        create_msg.setOnClickListener{
+            val intent = Intent(this, CreateUpdateActivity::class.java)
+            startActivityForResult(intent, Companion.REQUEST_CODE_DATA)
+        }
     }
 
     fun iniateAdapter() {
+
         list = ArrayList(realm.where(SaveCustomeMessage::class.java).findAll())
-        recyclerview.adapter = ReplyMessageAdapter(list, this
-        ) { item -> doClick(item) }
+        if(!list.isEmpty()) {
+            no_reply.visibility = View.GONE
+            recyclerview.adapter = ReplyMessageAdapter(list, this
+            ) { item -> doClick(item) }
+        } else {
+            no_reply.visibility = View.VISIBLE
+        }
 
 
     }
 
-    private fun initEditText() {
+    /*private fun initEditText() {
         realm.executeTransactionAsync({
             val message = it.createObject(SaveCustomeMessage::class.java)
             message.expectedMessage = expected_mesg.text.toString()
@@ -62,12 +79,12 @@ class CustomizeMessageActivity : AppCompatActivity() {
             Log.d("Save Success", "On Error: Error in saving Data!")
         })
     }
-
-    private fun clearEditText() {
+*/
+  /*  private fun clearEditText() {
         expected_mesg.setText("")
         reply_message.setText("")
     }
-
+*/
     private fun readData() {
         list.clear()
         list = ArrayList(realm.where(SaveCustomeMessage::class.java).findAll())
@@ -113,4 +130,13 @@ class CustomizeMessageActivity : AppCompatActivity() {
         return enabledNotificationListeners != null && enabledNotificationListeners.contains(packageName)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        
+        readData()
+    }
+
+    companion object {
+        const val  REQUEST_CODE_DATA = 1001
+    }
 }

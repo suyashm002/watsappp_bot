@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/auto_reply"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_close"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="28dp"
+            android:clickable="true"
+            android:layout_marginEnd="16dp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/message_received"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
+            android:layout_below="@+id/header"
+            android:layout_marginStart="@dimen/margin_sixteen"
+            android:layout_marginEnd="@dimen/margin_sixteen"
+            android:hint="@string/your_expected_message_from_friends"
+             >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message_received_edittext"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/message_reply"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/fab_color"
+            android:layout_marginStart="@dimen/margin_sixteen"
+            android:layout_marginEnd="@dimen/margin_sixteen"
+            android:hint="@string/your_reply_message"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/message_received"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message_reply_edittext"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="32dp"
+        android:baselineAlignBottom="true"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/fab_color"
+        android:text="@string/done"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+

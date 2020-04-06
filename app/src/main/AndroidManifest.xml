@@ -15,9 +15,11 @@
 
 
         <activity android:name="com.suyash.autoreply.ui.CustomizeMessageActivity"
-           android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+           android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         </activity>
+
+        <activity android:name=".ui.CreateUpdateActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
         <activity android:name=".ui.SplashActivity">
         <intent-filter>

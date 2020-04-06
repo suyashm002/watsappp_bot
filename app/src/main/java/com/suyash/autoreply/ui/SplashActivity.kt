@@ -4,12 +4,13 @@ import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.support.animation.DynamicAnimation
-import android.support.animation.SpringAnimation
-import android.support.animation.SpringForce
-import android.support.v7.app.AppCompatActivity
-import android.util.DisplayMetrics
+
+ import android.util.DisplayMetrics
 import android.view.animation.DecelerateInterpolator
+import androidx.appcompat.app.AppCompatActivity
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.dynamicanimation.animation.SpringForce
 import com.suyash.autoreply.R
 import kotlinx.android.synthetic.main.activity_splash.*
 

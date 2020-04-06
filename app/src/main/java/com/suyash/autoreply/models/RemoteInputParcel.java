@@ -3,7 +3,8 @@ package com.suyash.autoreply.models;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.app.RemoteInput;
+
+import androidx.core.app.RemoteInput;
 
 /**
  * Created by Suyash
