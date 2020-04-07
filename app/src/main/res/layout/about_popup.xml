@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/about_me"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_close"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:layout_marginEnd="16dp"/>
+
+    <TextView
+        android:id="@+id/text_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/howdy_user"
+        android:textColor="@color/header_color"
+        android:textSize="24sp"
+        android:layout_marginTop="44dp"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_below="@+id/header"/>
+
+    <TextView
+        android:id="@+id/text_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_am"
+        android:textColor="@color/header_color"
+        android:textSize="24sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_below="@+id/text_one"/>
+
+    <TextView
+        android:id="@+id/share_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share"
+        android:textColor="@color/fab_color"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:background="@drawable/transparent_background"
+        android:layout_marginTop="44dp"
+        android:drawableStart="@drawable/ic_share_2"
+        android:drawablePadding="8dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_below="@+id/text_two"/>
+
+    <TextView
+        android:id="@+id/github_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/source_code"
+        android:textColor="@color/fab_color"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/transparent_background"
+        android:layout_marginTop="44dp"
+        android:drawableStart="@drawable/ic_github"
+        android:drawablePadding="8dp"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_below="@+id/share_app"/>
+</RelativeLayout>

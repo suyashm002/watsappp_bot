@@ -10,4 +10,9 @@
     <string name="create">create</string>
     <string name="no_reply_available">No reply available</string>
     <string name="done">Done</string>
+    <string name="about_me">About me</string>
+    <string name="howdy_user">Howdy Stranger!</string>
+    <string name="i_am">I am Suyash Mishra residing in Hyderabad, India</string>
+    <string name="share">SHARE THIS APP</string>
+    <string name="source_code">Source Code</string>
 </resources>

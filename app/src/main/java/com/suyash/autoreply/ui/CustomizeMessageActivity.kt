@@ -1,10 +1,12 @@
 package com.suyash.autoreply.ui
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
  import android.util.Log
+import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,6 +50,11 @@ class CustomizeMessageActivity : AppCompatActivity() {
         create_msg.setOnClickListener{
             val intent = Intent(this, CreateUpdateActivity::class.java)
             startActivityForResult(intent, Companion.REQUEST_CODE_DATA)
+        }
+
+        info_button.setOnClickListener {
+            val dialogFragment = AboutPopup(this)
+            dialogFragment.show(supportFragmentManager, "signature")
         }
     }
 

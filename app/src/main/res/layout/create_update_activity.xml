@@ -48,7 +48,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/message_received_edittext"
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:paddingTop="@dimen/margin_sixteen"
+                android:paddingBottom="@dimen/margin_sixteen"
+                android:paddingStart="@dimen/margin_sixteen"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,7 +73,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/message_reply_edittext"
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:paddingTop="@dimen/margin_sixteen"
+                android:paddingBottom="@dimen/margin_sixteen"
+                android:paddingStart="@dimen/margin_sixteen"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>

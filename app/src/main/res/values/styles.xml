@@ -13,4 +13,10 @@
         <item name="boxStrokeWidth">2dp</item>
     </style>
 
+    <!-- Set parent theme as app theme. -->
+    <style name="DialogTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
 </resources>
