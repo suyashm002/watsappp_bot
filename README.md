@@ -6,4 +6,4 @@ Define your expected messages and your reply to that particular message . Your r
 
 You Can download my App from playStore https://play.google.com/store/apps/details?id=com.autoai.readnotification
 
-UI/UX by my friend and a very great dev @crazyhitty
+UI/UX by my friend and a very great dev @https://github.com/crazyhitty
