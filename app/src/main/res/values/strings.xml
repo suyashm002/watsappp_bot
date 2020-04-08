@@ -15,4 +15,6 @@
     <string name="i_am">I am Suyash Mishra residing in Hyderabad, India</string>
     <string name="share">SHARE THIS APP</string>
     <string name="source_code">Source Code</string>
+    <string name="give_permission">This app requires notification access in order to read notifications and reply accordingly.</string>
+    <string name="give_permission_access">give permission access</string>
 </resources>

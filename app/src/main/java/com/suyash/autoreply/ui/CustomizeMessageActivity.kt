@@ -56,6 +56,18 @@ class CustomizeMessageActivity : AppCompatActivity() {
             val dialogFragment = AboutPopup(this)
             dialogFragment.show(supportFragmentManager, "signature")
         }
+
+        checkIfPermisionGiven()
+    }
+
+    private fun checkIfPermisionGiven() {
+        if(isNotificationServiceRunning()) {
+            create_msg.visibility = View.VISIBLE
+            botto_layout.visibility = View.GONE
+        } else {
+            create_msg.visibility = View.GONE
+            botto_layout.visibility = View.VISIBLE
+        }
     }
 
     fun iniateAdapter() {

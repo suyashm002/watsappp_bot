@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/expected_msg_txt_header"
             android:text="@string/your_expected_message_from_friends"
-            android:textSize="10sp"
+            android:textSize="12sp"
             android:textColor="@color/header_color"
             android:layout_marginTop="@dimen/margin_sixteen"
             android:layout_marginEnd="@dimen/margin_sixteen"
