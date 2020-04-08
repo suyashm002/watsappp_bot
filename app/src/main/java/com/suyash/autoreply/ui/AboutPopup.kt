@@ -18,8 +18,16 @@ class AboutPopup(context: Context) : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
          val view: View =
                 LayoutInflater.from(context).inflate(R.layout.about_popup, container, false)
+        return view
+    }
 
-        close_button.setOnClickListener { dismiss() }
+    override fun getTheme(): Int {
+        return R.style.DialogTheme
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        close_dialog_button.setOnClickListener { dismiss() }
 
         share_app.setOnClickListener {
             val sendIntent = Intent()
@@ -35,16 +43,7 @@ class AboutPopup(context: Context) : DialogFragment() {
             openURL.data = Uri.parse("https://github.com/suyashm002/watsappp_bot/")
             startActivity(openURL)
         }
-        return view
     }
-
-    override fun getTheme(): Int {
-        return R.style.DialogTheme
-    }
-
-
-
-
 
 
 }

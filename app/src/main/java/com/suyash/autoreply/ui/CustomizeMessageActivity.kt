@@ -5,10 +5,11 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
- import android.util.Log
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.suyash.autoreply.R
 import com.suyash.autoreply.ReplyMessageAdapter
@@ -37,17 +38,14 @@ class CustomizeMessageActivity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         iniateAdapter()
-       // submit_button.setOnClickListener { initEditText() }
+        // submit_button.setOnClickListener { initEditText() }
         notification_layout.setOnClickListener {
-            //Open listener reference message // Notification access
-        val intent_s = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
-        } else {
-            TODO("VERSION.SDK_INT < LOLLIPOP_MR1")
+            openNotificationAccess()
         }
-            startActivity(intent_s) }
-
-        create_msg.setOnClickListener{
+        give_permission_layout.setOnClickListener {
+            openNotificationAccess()
+        }
+        create_msg.setOnClickListener {
             val intent = Intent(this, CreateUpdateActivity::class.java)
             startActivityForResult(intent, Companion.REQUEST_CODE_DATA)
         }
@@ -60,8 +58,17 @@ class CustomizeMessageActivity : AppCompatActivity() {
         checkIfPermisionGiven()
     }
 
+    private fun openNotificationAccess() {
+        //Open listener reference message // Notification access
+        val intent_s = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+        } else {
+            TODO("VERSION.SDK_INT < LOLLIPOP_MR1")
+        }
+        startActivityForResult(intent_s, 100)    }
+
     private fun checkIfPermisionGiven() {
-        if(isNotificationServiceRunning()) {
+        if (isNotificationServiceRunning()) {
             create_msg.visibility = View.VISIBLE
             botto_layout.visibility = View.GONE
         } else {
@@ -73,7 +80,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
     fun iniateAdapter() {
 
         list = ArrayList(realm.where(SaveCustomeMessage::class.java).findAll())
-        if(!list.isEmpty()) {
+        if (!list.isEmpty()) {
             no_reply.visibility = View.GONE
             recyclerview.adapter = ReplyMessageAdapter(list, this
             ) { item -> doClick(item) }
@@ -99,11 +106,11 @@ class CustomizeMessageActivity : AppCompatActivity() {
         })
     }
 */
-  /*  private fun clearEditText() {
-        expected_mesg.setText("")
-        reply_message.setText("")
-    }
-*/
+    /*  private fun clearEditText() {
+          expected_mesg.setText("")
+          reply_message.setText("")
+      }
+  */
     private fun readData() {
         list.clear()
         list = ArrayList(realm.where(SaveCustomeMessage::class.java).findAll())
@@ -130,7 +137,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
                 realm.beginTransaction()
             }
 
-            userdatabase!!.deleteFromRealm()
+            userdatabase.deleteFromRealm()
 
             realm.commitTransaction()
         }
@@ -143,19 +150,17 @@ class CustomizeMessageActivity : AppCompatActivity() {
     }
 
     private fun isNotificationServiceRunning(): Boolean {
-        val contentResolver = contentResolver
-        val enabledNotificationListeners = Settings.Secure.getString(contentResolver, "enabled_notification_listeners")
-        val packageName = packageName
-        return enabledNotificationListeners != null && enabledNotificationListeners.contains(packageName)
+     val map = NotificationManagerCompat.getEnabledListenerPackages(applicationContext).filterIndexed { index, value -> value == packageName }
+        return map.size == 1
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
+        checkIfPermisionGiven()
         readData()
     }
 
     companion object {
-        const val  REQUEST_CODE_DATA = 1001
+        const val REQUEST_CODE_DATA = 1001
     }
 }
