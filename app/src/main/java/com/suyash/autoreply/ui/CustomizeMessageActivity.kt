@@ -71,9 +71,15 @@ class CustomizeMessageActivity : AppCompatActivity() {
         if (isNotificationServiceRunning()) {
             create_msg.visibility = View.VISIBLE
             botto_layout.visibility = View.GONE
+            notification_layout.setCompoundDrawablesWithIntrinsicBounds(getDrawable(R.drawable.notification_turned_on),null,null,null)
+           // notification_layout.setCompoundDrawables(getDrawable(R.drawable.notification_turned_on),null,null,null)
         } else {
             create_msg.visibility = View.GONE
             botto_layout.visibility = View.VISIBLE
+            notification_layout.setCompoundDrawablesWithIntrinsicBounds(getDrawable(R.drawable.notification_not_on),null,null,null)
+
+           // notification_layout.setCompoundDrawables(getDrawable(R.drawable.notification_not_on),null,null,null)
+
         }
     }
 
