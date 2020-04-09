@@ -96,7 +96,21 @@
         android:clickable="true"
         android:focusable="true"
         />
-
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+         android:layout_marginStart="@dimen/margin_sixteen"
+        android:baselineAlignBottom="true"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#F44336"
+        android:text="@string/delete"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

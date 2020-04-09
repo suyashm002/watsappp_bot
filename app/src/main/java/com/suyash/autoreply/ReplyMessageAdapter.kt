@@ -31,11 +31,11 @@ class ReplyMessageAdapter(private val items : ArrayList<SaveCustomeMessage>, val
         val replyMessageText = view.reply_msg_txt
         val messageExpectedHeader = view.expected_msg_txt_header
         val messageReplyHeader = view.reply_msg_txt_header
-        val deleteMessage = view.delete_button
+        val msgLayout = view.message_layout
        fun setItem(item: SaveCustomeMessage) {
            messageExpectedText?.text = item.expectedMessage
            replyMessageText?.text = item.replyMessage
-           deleteMessage.setOnClickListener {
+           msgLayout.setOnClickListener {
                listner(item) }
        }
 

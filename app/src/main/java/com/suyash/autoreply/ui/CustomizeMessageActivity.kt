@@ -47,6 +47,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
         }
         create_msg.setOnClickListener {
             val intent = Intent(this, CreateUpdateActivity::class.java)
+            intent.putExtra(IS_UPDATE_MESSAGE,false)
             startActivityForResult(intent, Companion.REQUEST_CODE_DATA)
         }
 
@@ -72,14 +73,10 @@ class CustomizeMessageActivity : AppCompatActivity() {
             create_msg.visibility = View.VISIBLE
             botto_layout.visibility = View.GONE
             notification_layout.setCompoundDrawablesWithIntrinsicBounds(getDrawable(R.drawable.notification_turned_on),null,null,null)
-           // notification_layout.setCompoundDrawables(getDrawable(R.drawable.notification_turned_on),null,null,null)
-        } else {
+         } else {
             create_msg.visibility = View.GONE
             botto_layout.visibility = View.VISIBLE
             notification_layout.setCompoundDrawablesWithIntrinsicBounds(getDrawable(R.drawable.notification_not_on),null,null,null)
-
-           // notification_layout.setCompoundDrawables(getDrawable(R.drawable.notification_not_on),null,null,null)
-
         }
     }
 
@@ -120,6 +117,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
     private fun readData() {
         list.clear()
         list = ArrayList(realm.where(SaveCustomeMessage::class.java).findAll())
+
         recyclerview.adapter = ReplyMessageAdapter(list, this
         ) { item -> doClick(item) }
 
@@ -127,7 +125,13 @@ class CustomizeMessageActivity : AppCompatActivity() {
     }
 
     fun doClick(item: SaveCustomeMessage) {
-        val msgs = realm
+
+        val intent = Intent(this, CreateUpdateActivity::class.java)
+        intent.putExtra(IS_UPDATE_MESSAGE,true)
+        intent.putExtra("DATA",item)
+        startActivityForResult(intent, Companion.REQUEST_CODE_DATA)
+
+       /* val msgs = realm
                 .where(SaveCustomeMessage::class.java)
                 .findAll()
 
@@ -147,7 +151,7 @@ class CustomizeMessageActivity : AppCompatActivity() {
 
             realm.commitTransaction()
         }
-        iniateAdapter()
+        iniateAdapter()*/
     }
 
     override fun onBackPressed() {
@@ -168,5 +172,6 @@ class CustomizeMessageActivity : AppCompatActivity() {
 
     companion object {
         const val REQUEST_CODE_DATA = 1001
+        const val IS_UPDATE_MESSAGE = "IS_UPDATE_MESSAGE"
     }
 }
