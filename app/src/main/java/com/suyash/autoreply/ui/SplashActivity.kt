@@ -70,7 +70,7 @@ class SplashActivity : AppCompatActivity() {
                 }
             })
             springAnim.start()
-        }, 4000)
+        }, 1000)
 
     }
 }

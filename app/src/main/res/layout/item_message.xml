@@ -1,83 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/message_layout"
-    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:elevation="8dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="4dp"
-    android:padding="4dp"
-    android:background="@color/app_secondary_accent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/expected_msg_txt_header"
-            android:text="@string/your_expected_message_from_friends"
-            android:textSize="12sp"
-            android:textColor="@color/header_color"
-            android:layout_marginTop="@dimen/margin_sixteen"
-            android:layout_marginEnd="@dimen/margin_sixteen"
-            android:layout_marginStart="@dimen/margin_sixteen"/>
-        <androidx.appcompat.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expected_msg_txt_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/expected_msg_txt"
-        android:text="@string/app_name"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="@dimen/margin_sixteen"
-        android:layout_marginStart="@dimen/margin_sixteen"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/reply_msg_txt_header"
-            android:text="@string/your_reply_message"
-            android:textSize="10sp"
-            android:textColor="@color/app_secondary_text"
-            android:layout_marginTop="@dimen/margin_ten"
-            android:layout_marginEnd="@dimen/margin_sixteen"
-            android:layout_marginStart="@dimen/margin_sixteen"/>
-        <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/reply_msg_txt"
-        android:text="@string/app_name"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="@dimen/margin_sixteen"
         android:layout_marginStart="@dimen/margin_sixteen"
-        android:layout_marginBottom="@dimen/margin_sixteen"/>
+        android:layout_marginTop="@dimen/margin_sixteen"
+        android:layout_marginEnd="@dimen/margin_sixteen"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/your_expected_message_from_friends"
+        android:textColor="@color/header_color"
+        android:textSize="12sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/divider_line"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/expected_msg_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginEnd="@dimen/margin_sixteen"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/delete_button"
-            android:layout_marginTop="@dimen/margin_eight"
-            android:layout_marginEnd="@dimen/padding_sixteen"
-            android:text="@string/delete_msg"
-            android:background="@drawable/button_background"
-            android:layout_marginBottom="@dimen/margin_eight"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:layout_gravity="end"
-            android:visibility="gone"/>
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reply_msg_txt_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_marginTop="@dimen/margin_ten"
+        android:layout_marginEnd="@dimen/margin_sixteen"
+        android:text="@string/your_reply_message"
+        android:textColor="@color/app_secondary_text"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="10sp" />
 
-</androidx.cardview.widget.CardView>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/reply_msg_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_sixteen"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/margin_sixteen"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="@dimen/margin_sixteen"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/divider_line" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/margin_eight"
+        android:layout_marginEnd="@dimen/padding_sixteen"
+        android:layout_marginBottom="@dimen/margin_eight"
+        android:background="@drawable/button_background"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="@string/delete_msg"
+        android:visibility="gone" />
+
+</LinearLayout>
+

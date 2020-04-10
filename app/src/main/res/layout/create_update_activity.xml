@@ -16,6 +16,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/auto_reply"
             android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
             android:layout_marginStart="16dp"
             android:textSize="35sp"
             android:textStyle="bold" />
@@ -50,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:paddingTop="@dimen/margin_sixteen"
                 android:paddingBottom="@dimen/margin_sixteen"
-                android:paddingStart="@dimen/margin_sixteen"
+                 android:fontFamily="sans-serif-medium"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:paddingTop="@dimen/margin_sixteen"
                 android:paddingBottom="@dimen/margin_sixteen"
-                android:paddingStart="@dimen/margin_sixteen"
+                 android:fontFamily="sans-serif-medium"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,10 +92,12 @@
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/fab_color"
         android:text="@string/done"
+        android:fontFamily="sans-serif-medium"
         android:textSize="16sp"
         android:textColor="@color/white"
         android:clickable="true"
         android:focusable="true"
+        android:gravity="center"
         />
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/delete_button"
@@ -107,6 +110,8 @@
         android:backgroundTint="#F44336"
         android:text="@string/delete"
         android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
         android:textColor="@color/white"
         android:clickable="true"
         android:focusable="true"

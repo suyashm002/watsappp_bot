@@ -88,13 +88,20 @@
             android:layout_below="@+id/notification_layout"
             android:layout_marginTop="50dp" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/botto_layout"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            style="@style/MyCardView"
+             android:elevation="20dp"
+            app:cardElevation="20dp"
             android:layout_alignParentBottom="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,6 +109,7 @@
                 android:layout_marginStart="@dimen/margin_sixteen"
                 android:layout_marginTop="@dimen/margin_ten"
                 android:layout_marginEnd="@dimen/margin_sixteen"
+                android:fontFamily="sans-serif-medium"
                 android:layout_marginBottom="@dimen/margin_sixteen"/>
 
             <TextView
@@ -123,7 +131,9 @@
                 android:layout_marginEnd="@dimen/margin_sixteen"
                   android:layout_marginStart="@dimen/margin_sixteen"
                  />
-        </LinearLayout>
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
 
     </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
