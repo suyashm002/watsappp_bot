@@ -5,4 +5,5 @@
     <dimen name="margin_twenty_four">24dp</dimen>
     <dimen name="margin_eight">8dp</dimen>
     <dimen name="margin_ten">10dp</dimen>
+    <dimen name="margin_forteen">14dp</dimen>
 </resources>

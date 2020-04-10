@@ -29,6 +29,8 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
+        <activity android:name=".ui.AboutPopup"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
         <activity android:name="com.suyash.autoreply.ui.MainActivity"/>
         <service

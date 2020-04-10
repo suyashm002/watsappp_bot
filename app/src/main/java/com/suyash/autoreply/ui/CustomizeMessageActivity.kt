@@ -53,8 +53,10 @@ class CustomizeMessageActivity : AppCompatActivity() {
         }
 
         info_button.setOnClickListener {
-            val dialogFragment = AboutPopup(this)
-            dialogFragment.show(supportFragmentManager, "signature")
+            val intent = Intent(this, AboutPopup::class.java)
+             startActivity(intent)
+
+
         }
 
         checkIfPermisionGiven()

@@ -23,8 +23,8 @@
 
         <TextView
             android:id="@+id/close_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:background="@drawable/icon_close"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="28dp"
@@ -41,8 +41,8 @@
             android:layout_marginTop="50dp"
             android:padding="10dp"
             android:layout_below="@+id/header"
-            android:layout_marginStart="@dimen/margin_sixteen"
-            android:layout_marginEnd="@dimen/margin_sixteen"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:hint="@string/your_expected_message_from_friends"
              >
 
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:backgroundTint="@color/fab_color"
-            android:layout_marginStart="@dimen/margin_sixteen"
-            android:layout_marginEnd="@dimen/margin_sixteen"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:hint="@string/your_reply_message"
             android:padding="10dp"
             android:layout_marginTop="@dimen/margin_sixteen"
