@@ -14,7 +14,7 @@ import com.suyash.autoreply.R
 import kotlinx.android.synthetic.main.about_popup.*
 
 
-class AboutPopup(context: Context) : AppCompatActivity() {
+class AboutPopup : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

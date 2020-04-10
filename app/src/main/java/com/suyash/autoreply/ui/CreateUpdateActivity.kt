@@ -20,15 +20,14 @@ class CreateUpdateActivity : AppCompatActivity() {
 
         setContentView(R.layout.create_update_activity)
 
-        isUpdateMessage = intent.getBooleanExtra(CustomizeMessageActivity.IS_UPDATE_MESSAGE,false)
-        if(intent != null && intent.getParcelableExtra<SaveCustomeMessage>("DATA") != null && isUpdateMessage) {
-             updateMessage(intent.getParcelableExtra("DATA"))
+        isUpdateMessage = intent.getBooleanExtra(CustomizeMessageActivity.IS_UPDATE_MESSAGE, false)
+        if (intent != null && intent.getParcelableExtra<SaveCustomeMessage>("DATA") != null && isUpdateMessage) {
+            updateMessage(intent.getParcelableExtra("DATA"))
             delete_button.visibility = View.VISIBLE
-            header.setText(getString(R.string.update))
+
             messageId = intent.getParcelableExtra<SaveCustomeMessage>("DATA").expectedMessage.toString()
-        } else{
-             delete_button.visibility = View.GONE
-            header.setText(getString(R.string.auto_reply))
+        } else {
+            delete_button.visibility = View.GONE
         }
         realm = Realm.getDefaultInstance()
 
@@ -36,8 +35,8 @@ class CreateUpdateActivity : AppCompatActivity() {
 
         realm.commitTransaction()
 
-        done_button.setOnClickListener {View ->
-            if(checkError()) {
+        done_button.setOnClickListener { View ->
+            if (checkError()) {
                 initEditText()
             } else {
                 showError()
@@ -57,7 +56,7 @@ class CreateUpdateActivity : AppCompatActivity() {
     }
 
     private fun checkError(): Boolean {
-  return !message_received_edittext.text?.isEmpty()!! && !message_reply_edittext.text?.isEmpty()!!
+        return !message_received_edittext.text?.isEmpty()!! && !message_reply_edittext.text?.isEmpty()!!
     }
 
     private fun deleteMessage() {
@@ -68,7 +67,7 @@ class CreateUpdateActivity : AppCompatActivity() {
         val userdatabase = msgs
                 .where()
                 .equalTo("expectedMessage", message_received_edittext.text.toString())
-                .equalTo("replyMessage",  message_reply_edittext.text.toString())
+                .equalTo("replyMessage", message_reply_edittext.text.toString())
                 .findFirst()
 
         if (userdatabase != null) {
@@ -83,21 +82,23 @@ class CreateUpdateActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun updateMessage(saveCustomeMessage : SaveCustomeMessage) {
+    private fun updateMessage(saveCustomeMessage: SaveCustomeMessage) {
         message_received_edittext.setText(saveCustomeMessage.expectedMessage)
         message_reply_edittext.setText(saveCustomeMessage.replyMessage)
-     }
+    }
 
     private fun initEditText() {
-        if(isUpdateMessage) {
+        if (isUpdateMessage) {
+            header.setText(getString(R.string.update))
             realm.executeTransaction {
-                var saveCustomeMessage = it.where(SaveCustomeMessage::class.java).equalTo("expectedMessage",messageId).findFirst()
+                var saveCustomeMessage = it.where(SaveCustomeMessage::class.java).equalTo("expectedMessage", messageId).findFirst()
                 saveCustomeMessage.expectedMessage = message_received_edittext.text?.toString()
                 saveCustomeMessage.replyMessage = message_reply_edittext.text?.toString()
             }
             finish()
 
         } else {
+            header.setText(getString(R.string.create))
             realm.executeTransactionAsync({
                 val message = it.createObject(SaveCustomeMessage::class.java)
                 message.expectedMessage = message_received_edittext.text.toString()
@@ -112,6 +113,7 @@ class CreateUpdateActivity : AppCompatActivity() {
             })
         }
     }
+
     private fun clearEditText() {
         message_received_edittext.setText("")
         message_reply_edittext.setText("")

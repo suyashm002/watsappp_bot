@@ -16,8 +16,8 @@
 
     <TextView
         android:id="@+id/close_dialog_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:background="@drawable/icon_close"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="28dp"
@@ -31,6 +31,7 @@
         android:text="@string/howdy_user"
         android:textColor="@color/header_color"
         android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="44dp"
         android:layout_marginStart="@dimen/margin_sixteen"
         android:layout_below="@+id/header"/>
@@ -42,6 +43,7 @@
         android:text="@string/i_am"
         android:textColor="@color/header_color"
         android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="20dp"
         android:layout_marginStart="@dimen/margin_sixteen"
         android:layout_below="@+id/text_one"/>
@@ -61,6 +63,7 @@
         android:paddingStart="10dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
+        android:fontFamily="sans-serif-medium"
         android:paddingEnd="10dp"
         android:layout_marginStart="@dimen/margin_sixteen"
         android:layout_below="@+id/text_two"/>
@@ -76,6 +79,7 @@
         android:paddingStart="10dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
+        android:fontFamily="sans-serif-medium"
         android:paddingEnd="10dp"
         android:background="@drawable/transparent_background"
         android:layout_marginTop="44dp"
