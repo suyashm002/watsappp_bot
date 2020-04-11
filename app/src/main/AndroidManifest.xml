@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.suyash.autoreply">
+    package="com.autoai.readnotification">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name="com.suyash.autoreply.ApplicationClass"
+        android:name="com.autoai.readnotification.ApplicationClass"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_splash"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
 
-        <activity android:name="com.suyash.autoreply.ui.CustomizeMessageActivity"
+        <activity android:name="com.autoai.readnotification.ui.CustomizeMessageActivity"
            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         </activity>
 
-        <activity android:name=".ui.CreateUpdateActivity"
+        <activity android:name="com.autoai.readnotification.ui.CreateUpdateActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
-        <activity android:name=".ui.SplashActivity"
+        <activity android:name="com.autoai.readnotification.ui.SplashActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -29,12 +29,12 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".ui.AboutPopup"
+        <activity android:name="com.autoai.readnotification.ui.AboutPopup"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
 
-        <activity android:name="com.suyash.autoreply.ui.MainActivity"/>
+        <activity android:name="com.autoai.readnotification.ui.MainActivity"/>
         <service
-            android:name="com.suyash.autoreply.MyNotifiService"
+            android:name="com.autoai.readnotification.MyNotifiService"
             android:priority="1000"
             android:label="notificationMonitoring"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">

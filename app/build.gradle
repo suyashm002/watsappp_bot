@@ -8,15 +8,16 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'realm-android'
 
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.suyash.autoreply"
+        applicationId "com.autoai.readnotification"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -50,5 +51,8 @@ dependencies {
 
     // fuzzy string matching library
     implementation "com.willowtreeapps:fuzzywuzzy-kotlin:0.1.1"
+
+    // firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
 }
