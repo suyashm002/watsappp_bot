@@ -10,6 +10,9 @@ apply plugin: 'realm-android'
 
 apply plugin: 'com.google.gms.google-services'
 
+apply plugin: 'com.google.firebase.crashlytics'
+
+
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -54,5 +57,9 @@ dependencies {
 
     // firebase
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    //crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta04'
+
 
 }
