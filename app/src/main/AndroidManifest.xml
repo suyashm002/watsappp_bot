@@ -31,7 +31,8 @@
         </activity>
         <activity android:name="com.autoai.readnotification.ui.AboutPopup"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
-
+        <activity android:name="com.autoai.readnotification.ui.NotificationSettingsActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity android:name="com.autoai.readnotification.ui.MainActivity"/>
         <service
             android:name="com.autoai.readnotification.MyNotifiService"

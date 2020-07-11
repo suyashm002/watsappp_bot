@@ -19,4 +19,6 @@
     <string name="give_permission_access">give permission access</string>
     <string name="update">UPDATE</string>
     <string name="delete">DELETE</string>
+    <string name="save_notifications">Save Notifications</string>
+    <string name="allow_wa">Allow to save WA messages</string>
 </resources>

@@ -51,9 +51,13 @@ class CustomizeMessageActivity : AppCompatActivity() {
 
         info_button.setOnClickListener {
             val intent1 = Intent(this, AboutPopup::class.java)
-             startActivity(intent1)
+            startActivity(intent1)
         }
 
+        notification_settings.setOnClickListener {
+        val intent2 = Intent(this, NotificationSettingsActivity::class.java)
+        startActivity(intent2)
+    }
         checkIfPermisionGiven()
     }
 
