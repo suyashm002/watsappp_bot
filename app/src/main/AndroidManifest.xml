@@ -33,7 +33,9 @@
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
         <activity android:name="com.autoai.readnotification.ui.NotificationSettingsActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
-        <activity android:name="com.autoai.readnotification.ui.MainActivity"/>
+        <activity android:name="com.autoai.readnotification.ui.MainActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+            />
         <service
             android:name="com.autoai.readnotification.MyNotifiService"
             android:priority="1000"

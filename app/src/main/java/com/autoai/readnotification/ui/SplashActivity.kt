@@ -50,7 +50,7 @@ class SplashActivity : AppCompatActivity() {
                                 }
 
                                 override fun onAnimationEnd(p0: Animator?) {
-                                    val intent = Intent(applicationContext, CustomizeMessageActivity::class.java)
+                                    val intent = Intent(applicationContext, MainActivity::class.java)
                                     finish()
                                     startActivity(intent)
                                     overridePendingTransition(0, 0)

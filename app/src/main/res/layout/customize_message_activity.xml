@@ -72,8 +72,9 @@
             android:id="@+id/botto_layout"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/transparent"
+            android:theme="@style/Theme.MaterialComponents.Light"
             style="@style/MyCardView"
              android:elevation="20dp"
             app:cardElevation="20dp"
@@ -127,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="64dp"
         android:baselineAlignBottom="true"
         android:text="@string/create"
         android:textColor="@color/white"
@@ -136,6 +137,7 @@
         app:icon="@drawable/ic_add_white"
         app:iconTint="@color/white"
         app:layout_anchorGravity="end"
+        android:theme="@style/Theme.MaterialComponents.Light"
         android:background="@drawable/button_background"/>
 
 </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
