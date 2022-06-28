@@ -59,13 +59,13 @@ public class NotificationContentUtils {
         String msg = null;
         TextView tv = (TextView)localView.findViewById(NotificationIds.getInstance(localView.getContext()).BIG_TEXT);
         if(tv != null && !TextUtils.isEmpty(tv.getText())) {
-            msg = tv.getText().toString();
+            msg = tv.getText().toString().toLowerCase();
         }
 
         if(TextUtils.isEmpty(msg)) {
             tv = (TextView)localView.findViewById(NotificationIds.getInstance(localView.getContext()).TEXT);
             if(tv != null) {
-                msg = tv.getText().toString();
+                msg = tv.getText().toString().toLowerCase();
             }
         }
 

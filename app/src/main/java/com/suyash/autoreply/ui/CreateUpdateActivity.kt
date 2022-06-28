@@ -92,7 +92,7 @@ class CreateUpdateActivity : AppCompatActivity() {
             header.setText(getString(R.string.update))
             realm.executeTransaction {
                 var saveCustomeMessage = it.where(SaveCustomeMessage::class.java).equalTo("expectedMessage", messageId).findFirst()
-                saveCustomeMessage.expectedMessage = message_received_edittext.text?.toString()
+                saveCustomeMessage.expectedMessage = message_received_edittext.text?.toString()?.toLowerCase()
                 saveCustomeMessage.replyMessage = message_reply_edittext.text?.toString()
             }
             finish()
@@ -101,7 +101,7 @@ class CreateUpdateActivity : AppCompatActivity() {
             header.setText(getString(R.string.create))
             realm.executeTransactionAsync({
                 val message = it.createObject(SaveCustomeMessage::class.java)
-                message.expectedMessage = message_received_edittext.text.toString()
+                message.expectedMessage = message_received_edittext.text.toString().toLowerCase()
                 message.replyMessage = message_reply_edittext.text.toString()
 
             }, {
